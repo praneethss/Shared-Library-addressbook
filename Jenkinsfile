@@ -3,7 +3,7 @@ pipeline {
     agent any
     environment {
         branch = 'master'
-        scmUrl = 'https://github.com/praneethss/addrssbook.git'
+        scmUrl = 'https://github.com/praneethss/addressbook.git'
         serverPort = '8080'
     }
     stages {
