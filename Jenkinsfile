@@ -19,4 +19,16 @@ pipeline {
             }
         }
     }
+    post {
+        changed {
+            script {
+                if (currentBuild.currentResult == 'FAILURE') { 
+				emailext attachLog: true, 
+                body: 'Build got Failed', 
+                subject: 'Build Messages', 
+                to: 'praneeth.srinivas1993@gmail.com'
+                }
+            }
+        }
+    }
 }
