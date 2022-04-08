@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('checkout git') {
             steps {
-                git brach: branch, url: scmUrl
+                git branch: branch, url: scmUrl
             }
         }
 
