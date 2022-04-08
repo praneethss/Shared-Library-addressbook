@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage('checkout git') {
             steps {
-                git brch: branch, url: scmUrl
+                git brach: branch, url: scmUrl
             }
         }
 
         stage('build') {
             steps {
-                sh 'mvn clean install package'
+                sh 'mvn clean install pakage'
             }
         }
     }
@@ -23,10 +23,10 @@ pipeline {
         changed {
             script {
                 if (currentBuild.currentResult == 'FAILURE') { 
-				emailext attachLog: true, 
-                body: 'Build got Failed', 
-                subject: 'Build Messages', 
-                to: 'praneeth.srinivas1993@gmail.com'
+                    emailext attachLog: true, 
+                    body: 'Build got Failed', 
+                    subject: 'Build Messages', 
+                    to: 'praneeth.srinivas1993@gmail.com'
                 }
             }
         }
